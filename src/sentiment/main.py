@@ -1,3 +1,4 @@
+from sentiment.ops import router as ops_router
 from collections import Counter
 
 from fastapi import FastAPI, HTTPException
@@ -5,6 +6,7 @@ from fastapi import FastAPI, HTTPException
 from sentiment.lexicon import TextError, classify
 
 app = FastAPI()
+app.include_router(ops_router, prefix="/v1")
 MAX_BATCH = 100
 
 

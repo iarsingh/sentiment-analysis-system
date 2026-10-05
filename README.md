@@ -70,3 +70,7 @@ curl -s -X POST localhost:8000/classify -H 'content-type: application/json' \
 ```
 
 Refused: empty text, text that is not a string, text over 5000 characters, and an empty or oversized batch.
+
+## Ops plane
+
+Workspaces, tenant isolation, job approval, and audit live under `/v1`. Production apply is refused. See `docs/ARCHITECTURE.md`.
